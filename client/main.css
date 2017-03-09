@@ -1,0 +1,42 @@
+@import url(https://fonts.googleapis.com/css?family=Montserrat);
+
+
+/*Contact Us Template */
+.jumbotron {
+background: #358CCE;
+color: #FFF;
+border-radius: 0px;
+}
+.jumbotron-sm { padding-top: 24px;
+padding-bottom: 24px; }
+.jumbotron small {
+color: #FFF;
+}
+.h1 small {
+font-size: 24px;
+}
+
+.quicksort{
+  width: 200px;
+}
+
+.content{
+  margin-top: -6px;
+}
+
+.bg-1{
+  background-color: #D3D3D3;
+}
+
+.bg-2{
+  background-color: #ADD8E6;
+}
+
+.pb{
+  padding-bottom: 1cm;
+}
+
+.site-wrapper{
+  background-color:  #D3D3D3;
+}
+

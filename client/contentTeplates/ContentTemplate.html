@@ -1,0 +1,80 @@
+<template name="aboutUs">
+
+	<div class="container-fluid bg-1 text-center">
+  <h1>- About Us -</h1>
+  <h3>Find out who we are and what we do</h3>
+  <br>
+  <h4 class="col-md-8 col-md-offset-2 pb">Lorem ipsum dolor sit amet, pri ea paulo errem. Falli audiam an his, pro agam aliquam vituperatoribus in. No dicant omittam pertinacia per. Te veniam perfecto sea, ex vix ubique graece ponderum.
+
+Ei agam consulatu vel, mea eirmod probatus in, ne per reque vidisse voluptua. Iuvaret fuisset minimum et qui, quo ex dolorum phaedrum, nonumes constituto elaboraret nam te. Rebum minimum interesset an per. Sed feugiat fabulas comprehensam cu, ei affert everti deserunt mei. Ex laudem nostrud mea, erat mollis phaedrum eam in. Cum possim viderer assueverit cu, vix ad modus euripidis, soluta vocent oportere vel ad.
+
+Saepe principes mel ei, sit eu meis dolore delenit. Solum patrioque ad est, nostro qualisque ex duo. Cu purto fabulas expetendis nam. Ea mel eius nihil labitur, no pro mnesarchum temporibus. Exerci interesset ex eam.
+
+<hr>
+
+Interesset signiferumque nec et, an rebum quidam praesent mea. No ius repudiare appellantur, agam scaevola per ut. Duo paulo qualisque in, sonet commodo pro eu, nam te quando labores. Id graecis perfecto moderatius sed.
+
+An contentiones deterruisset cum, ad complectitur contentiones ius, per nibh audiam voluptatum et. Vix id cetero discere dissentiet, vel homero expetendis ad. Cu sumo delenit eloquentiam usu. Cu usu cibo definitiones. Lorem aperiri reprehendunt at eum. Utinam causae animal no nam. 
+</h4>
+</div>
+
+<div class="bg-2 text-center">
+	<div id="googleMap" style="height:400px;width:100%;"></div>
+<script>
+function myMap() {
+var myCenter = new google.maps.LatLng(53.2766,-9.0616);
+var mapProp = {center:myCenter, zoom:12, scrollwheel:false, draggable:false, mapTypeId:google.maps.MapTypeId.ROADMAP};
+var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
+var marker = new google.maps.Marker({position:myCenter});
+marker.setMap(map);
+}
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCr2EyovjK0oF9bE970yLw6ifPJqA9--HU&callback=myMap"></script>
+</div>
+
+
+</template>
+
+<template name="logIn">
+<h2> log in </h2>
+</template>
+
+<template name="contactUs">
+<div id="contact" class="content-section text-center">
+        <div class="contact-section">
+            <div class="container">
+              <h2>Contact Us</h2>
+              <div class="row">
+                <div class="col-md-8 col-md-offset-2">
+                  <form class="form-horizontal">
+                    <div class="form-group">
+                      <label for="exampleInputName2">Name</label>
+                      <input type="text" class="form-control" id="exampleInputName2" placeholder="Jane Doe">
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputEmail2">Email</label>
+                      <input type="email" class="form-control" id="exampleInputEmail2" placeholder="jane.doe@example.com">
+                    </div>
+                    <div class="form-group ">
+                      <label for="exampleInputText">Your Message</label>
+                     <textarea  class="form-control" placeholder="Description"></textarea> 
+                    </div>
+                    <button type="submit" class="btn btn-default">Send Message</button>
+                  </form>
+                  <br>
+                  <hr>
+                  
+                </div>
+              </div>
+              </div>
+              </div>
+              </div>
+           
+
+</template>
+
+<template name="home">
+
+<h2>Home Page</h2>
+    
+</template>
