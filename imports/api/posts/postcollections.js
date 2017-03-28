@@ -27,6 +27,8 @@ Meteor.methods({
 		post:post,
 		date: new Date(),
 		createdBy: this.userId,
+		firstName : Meteor.users.findOne({ _id: this.userId}).profile.name.first,
+		lastName : Meteor.users.findOne({ _id: this.userId}).profile.name.last,
 		likes:{
 			totalLikes:0,
 			users:[]
@@ -45,10 +47,13 @@ Meteor.methods({
 },
 
 'likePost'(postId){
+
+	console.log('Post Liked');
+
 	var update= true;
 
 	Posts.update(
-		_id: postId,
+		{_id: postId},
 
 		{$addToSet : {"likes.users": this.userId}}
 		
@@ -68,7 +73,7 @@ Meteor.methods({
 	if(update){
 
 		Posts.update(
-			_id: postId,
+			{_id: postId},
 			{$inc : {"likes.totalLikes": 1}}
 		),
 
@@ -80,7 +85,7 @@ Meteor.methods({
 
 
 		};
-
+		
 
 	}
 },
@@ -88,8 +93,9 @@ Meteor.methods({
 'unlikePost'(postId){
 
 	Posts.update(
-		_id: postId,
-		{$inc : { "likes.totalLikes": -1}}),
+		{_id: postId},
+		{$inc : { "likes.totalLikes": -1}}
+		),
 
 		function(error, result){
 			if(error) console.log ( error);
@@ -97,12 +103,15 @@ Meteor.methods({
 		};
 
 		Posts.update(
-			_id: postId,
+			{_id: postId},
 			{$pop : {"likes.users": this.userId}}
 		),function(error,result){
 			if(error) console.log ( error);
 			if(result) console.log (result);
 		};
+
+			console.log('Post unliked');
+
 
 },
 
@@ -113,7 +122,7 @@ Meteor.methods({
 
 'updatePost'(postObj){
 	Posts.update(
-		_id: postObj.id,
+		{_id: postObj.id},
 		{$set: {post : postObj.post}}
 		);
 }
