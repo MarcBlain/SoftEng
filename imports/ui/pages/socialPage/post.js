@@ -42,14 +42,18 @@ Template.post.helpers({
 			return true;
 		else 
 			return false;
-	}
+	},
+
 
 });
 
 Template.post.events({
 
 
-'click .likeBox' : function(event){
+'click .likeBox input' : function(event){
+
+	console.log('Clicked like for post ' + this._id);
+
 	if(event.toElement.checked){
 		Meteor.call('likePost', this._id);
 	}
