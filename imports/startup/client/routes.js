@@ -8,6 +8,8 @@ import '../../ui/layouts/navbar/navbar.js';
 
 import '../../ui/layouts/footer/footer.js';
 
+import '../../ui/layouts/sidebar/sidebar.js';
+
 import '../../ui/pages/home/home.js';
 
 import '../../ui/pages/not-found/not-found.js';
@@ -59,12 +61,7 @@ FlowRouter.route('/logIn', {
   },
 });
 
-FlowRouter.route('/posts', {
-  name: 'App.social',
-  action() {
-    BlazeLayout.render('App_body', { navbar: "navbar" , main: 'posts' , footer: "footer"});
-  },
-});
+
 
 FlowRouter.route('/register', {
   name: 'App.register',
@@ -73,10 +70,17 @@ FlowRouter.route('/register', {
   },
 });
 
+FlowRouter.route('/posts', {
+  name: 'App.social',
+  action() {
+    BlazeLayout.render('App_body', { navbar: "navbar" , sidebar: 'sidebar' ,main: 'posts' , footer: "footer"});
+  },
+});
+
 FlowRouter.route('/todolist', {
   name: 'App.todolist',
   action() {
-    BlazeLayout.render('App_body', { navbar: "navbar" , main: 'todolist', footer: "footer" });
+    BlazeLayout.render('App_body', { navbar: "navbar" , sidebar: 'sidebar' ,main: 'todolist', footer: "footer" });
   },
 });
 
@@ -85,7 +89,7 @@ FlowRouter.route('/list/:_id', {
 
   action(){
   	
-    BlazeLayout.render('todoLayout', { navbar: "navbar" , main: 'listPage', footer: "footer" });
+    BlazeLayout.render('App_body', { navbar: "navbar" , sidebar: 'sidebar' ,main: 'listPage', footer: "footer" });
   },
 
 });
