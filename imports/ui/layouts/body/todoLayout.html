@@ -1,0 +1,31 @@
+
+<template name="todoLayout">
+  <header>
+  </header>
+  <body>
+  <div class="site-wrapper">
+            <div class="site-wrapper-inner">
+                <div class="cover-container">
+                    <div class="masthead clearfix">
+                        <div class="inner">
+                        {{> Template.dynamic template=navbar}}<!-- loading navbar template-->   
+                        </div>
+                    </div>
+                   
+                    <div class="inner cover">
+                    {{> Template.dynamic template=main}}
+                    </div>
+ 
+ 
+                    <div class="mastfoot">
+                        <div class="inner">
+                          {{> Template.dynamic template=footer}}<!-- this loads the footer template-->
+                        </div>
+             
+                </div>
+            </div>
+        </div>
+        </div>
+
+  </body>
+</template>

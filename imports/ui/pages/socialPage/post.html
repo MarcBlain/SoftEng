@@ -1,0 +1,69 @@
+<template name="post">
+<div class="row col-sm-8 col-sm-offset-2 textPost">
+	<div class="row">
+		<div class="well">
+			<div class="row">
+				<div class="col-sm-2 pull-left">
+			<!-- {{> avatar userId=createdBy shape="rounded"}} -->
+			</div>
+			<div class="col-sm-3 pull-right">
+				{{timeDiff (date)}}
+			</div>
+
+		</div>
+
+		<div class="row spacer">
+		<div class="col-sm-12">
+			<input class="form-control hidden" type="text" id="edit{{_id}}" value={{post}}>
+				<div id="post{{_id}}">
+				{{post}}
+				</div>
+			</div>
+		</div>
+
+		<div class="row spacer">
+			<div class="col-xs-3">
+				<div class="likebox">
+				<input type="checkbox" id="like{{_id}}" checked={{checked (likes.users)}}>
+				<label for="like{{_id}}">
+
+				{{likes.totalLikes}}
+				</label>
+				</div>
+		</div>	
+		</div>
+
+
+		<!--	<div class="col-xs-3">
+				<div class="sharebox">
+				<input type="checkbox" id="like{{_id}}" checked ={{checked (likes.users)}};
+				<label for="like{{_id}}">
+				{{likes.totalLikes}}
+				</div>
+		</div>	
+		</div>
+		-->
+
+		<div class="col-xs-3">
+		<a id="deletePost" class="btn btn-trash">
+			<i class="fa fa-trash" aria-hidden="true"></i>
+			</a>
+
+			</div>
+
+			{{#if userCreated (createdBy)}}
+			<div class="col-xs-3 editBox">
+				<input type="checkbox" id="editPost{{this._id}}">
+				<label for="editPost{{this._id}}">
+				</label>
+				</div>
+				{{/if}}
+				</div>
+
+
+
+
+	</div>
+	</div>
+
+	</template>

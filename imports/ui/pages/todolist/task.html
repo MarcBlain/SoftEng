@@ -1,0 +1,15 @@
+<template name="task">
+<div class="task-container">
+<li class="{{#if checked}}checked{{/if}}">
+
+
+<input type="checkbox" checked="{{checked}}" class="toggle-checked"/>
+
+
+<!--<span class="text"><strong>{{username}} : </strong>{{text}}</span>-->
+<input type="text" value="{{name}}" name="taskItem" class="text">
+
+<button class="delete">&times;</button>
+</li>
+</div>
+</template> 

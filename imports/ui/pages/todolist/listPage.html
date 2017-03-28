@@ -1,0 +1,32 @@
+<template name="listPage">
+<div class="listPage-container ">
+
+    <h1>{{lists.name}}</h1>
+
+
+<div class="addshowtask">
+<h3>Tasks</h3>
+<form class="new-task">
+<input type="text" name="text" placeholder="Add new Task"/>
+<button type="submit" class="btn btn-default">Add Task</button>
+</form>
+
+
+
+<ul>
+{{# each tasks}}
+{{> task}}
+{{/each}}
+
+</ul>
+
+
+
+</div>
+
+    
+
+    </div>
+    
+</template>
+

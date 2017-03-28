@@ -1,0 +1,38 @@
+<template name="todolist">
+
+<div class="container">
+<header>
+<h1>Quicksort - To do list application</h1>
+<h2>Tasks to be done : {{incompleteCount}}</h2>
+
+  <label class="hide-completed">
+        <input type="checkbox" />
+        Hide Completed Tasks
+      </label>
+
+
+
+
+<!-- event done for this already-->
+<h3>Lists</h3>
+<form class="new-list">
+<input type="text" name="text" placeholder="Add new List">
+<button type="submit" class="btn btn-default">Add List</button>
+</form>
+<!-- this is for showing all the lists in a list-->
+<ul>
+<!-- need helper for lists and its inn todolist template-->
+<!-- helper is done -->
+{{# each lists}}
+{{> list}}
+{{/each}}
+</ul>
+
+<h3>All Tasks</h3>
+{{# each tasks}}
+{{> task}}
+{{/each}}
+</header>
+</div>
+</template>
+
