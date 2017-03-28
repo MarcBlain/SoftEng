@@ -2,9 +2,11 @@
 <div class="row col-sm-8 col-sm-offset-2 textPost">
 	<div class="row">
 		<div class="well">
+		<!-- ROW FOR TOP PART OF POSTS -->
 			<div class="row">
 				<div class="col-sm-2 pull-left">
 			<!-- {{> avatar userId=createdBy shape="rounded"}} -->
+			<p><b>{{firstName}}&nbsp;{{lastName}}</b></p>
 			</div>
 			<div class="col-sm-3 pull-right">
 				{{timeDiff (date)}}
@@ -12,6 +14,7 @@
 
 		</div>
 
+		<!-- ROW FOR POSTS -->
 		<div class="row spacer">
 		<div class="col-sm-12">
 			<input class="form-control hidden" type="text" id="edit{{_id}}" value={{post}}>
@@ -21,9 +24,11 @@
 			</div>
 		</div>
 
+		<!-- NEXT ROW FOR LIKES EDIT AND DELETE -->
+		<!-- LIKE -->
 		<div class="row spacer">
 			<div class="col-xs-3">
-				<div class="likebox">
+				<div class="likeBox">
 				<input type="checkbox" id="like{{_id}}" checked={{checked (likes.users)}}>
 				<label for="like{{_id}}">
 
@@ -44,21 +49,23 @@
 		</div>
 		-->
 
-		<div class="col-xs-3">
+		<!-- DELETE -->
+		<div class="col-xs-3 pull-center">
 		<a id="deletePost" class="btn btn-trash">
 			<i class="fa fa-trash" aria-hidden="true"></i>
 			</a>
 
 			</div>
-
-			{{#if userCreated (createdBy)}}
-			<div class="col-xs-3 editBox">
-				<input type="checkbox" id="editPost{{this._id}}">
-				<label for="editPost{{this._id}}">
-				</label>
-				</div>
-				{{/if}}
-				</div>
+			<!-- EDIT -->
+		{{#if userCreated (createdBy)}}
+		<div class="col-xs-3 editBox pull-right">
+			<input type="checkbox" id="editPost{{this._id}}">
+			<label for="editPost{{this._id}}">
+			</label>
+		</div>
+		
+		{{/if}}
+	</div>
 
 
 
